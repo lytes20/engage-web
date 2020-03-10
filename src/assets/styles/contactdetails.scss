@@ -1,0 +1,25 @@
+.contact-details-container {
+  padding: 20px;
+//   height: 100vh;
+}
+
+.contact-details-content {
+  display: flex;
+  height: 100%;
+//   border: 1px solid red;
+  justify-content: space-between;
+}
+
+.contact-details-side,
+.contact-details-main {
+  height: 100%;
+}
+.contact-details-main {
+  flex: 1;
+  margin-left: 10px;
+}
+.contact-details-side {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 25em;
+}
