@@ -1,11 +1,12 @@
 import React from "react";
 
+import { withRouter } from "react-router-dom";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import TableContainer from "@material-ui/core/TableContainer";
-import Paper from '@material-ui/core/Paper';
+import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
 
 import CustomTableHead from "./CustomTableHead";
@@ -17,9 +18,13 @@ export const CustomTableRow = withStyles({
     cursor: "pointer"
   }
 })(TableRow);
-function ContactsTable() {
+function ContactsTable(props) {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("id");
+
+  function handleOpenContactDetails(contact) {
+    props.history.push("/contact-details");
+  }
 
   return (
     <TableContainer component={Paper}>
@@ -34,7 +39,7 @@ function ContactsTable() {
             <CustomTableRow
               hover
               key={contact.name}
-              onClick={() => console.log(contact)}
+              onClick={() => handleOpenContactDetails(contact)}
             >
               <TableCell>{contact.name}</TableCell>
               <TableCell>{contact.date}</TableCell>
@@ -48,4 +53,4 @@ function ContactsTable() {
   );
 }
 
-export default ContactsTable;
+export default withRouter(ContactsTable);
