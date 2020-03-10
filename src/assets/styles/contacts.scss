@@ -1,3 +1,18 @@
-.contacts-container{
-    // border: 1px solid red;
+.contacts-container {
+  //   border: 1px solid red;
+  display: flex;
+  padding: 20px;
+}
+
+.contacts-main,
+.contacts-side {
+  //   border: 1px solid green;
+}
+.contacts-main {
+  flex: 1;
+}
+.contacts-side {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 25em;
 }
