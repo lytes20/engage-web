@@ -16,7 +16,7 @@ function NavBar() {
       <div>
         <ul>
           {menuItems.map(item => (
-            <li>{item}</li>
+            <li key={item}>{item}</li>
           ))}
         </ul>
       </div>
