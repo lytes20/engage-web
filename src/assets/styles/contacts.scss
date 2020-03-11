@@ -2,6 +2,20 @@
   //   border: 1px solid red;
   display: flex;
   padding: 20px;
+  height: 100%;
+  background-color: #f6f8f9;
+  .contacts-heading{
+    display: flex;
+    align-items: center;
+    .sort-by-container{
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .contacts-head-item {
+    margin-bottom: 20px;
+  }
 }
 
 .contacts-main,
@@ -12,7 +26,16 @@
   flex: 1;
 }
 .contacts-side {
+  margin-left: 10px;
   flex-grow: 0;
   flex-shrink: 0;
   width: 25em;
+  .contacts-side-item{
+    margin-right: 10px;
+  }
+  .contacts-side-actions-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

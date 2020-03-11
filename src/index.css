@@ -4,8 +4,13 @@
   box-sizing: border-box;
 }
 body {
+  background-color: #f6f8f9;
   font-family: "Lato", sans-serif;
 }
 ul {
   list-style: none;
+}
+
+h1 {
+  font-size: 20px;
 }
