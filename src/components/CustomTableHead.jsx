@@ -20,7 +20,7 @@ function CustomTableHead(props) {
 
   return (
     <TableHead>
-      <TableRow>
+      <TableRow style={{ borderBottom: "1px solid gray" }}>
         <TableCell padding="checkbox">
           <Checkbox
             indeterminate={numSelected > 0 && numSelected < rowCount}
@@ -34,11 +34,12 @@ function CustomTableHead(props) {
             key={headCell.id}
             align="left"
             sortDirection={orderBy === headCell.id ? order : false}
+            style={{ fontSize: '16px', fontWeight:'600', borderRight: "1px solid #f1f1f1", padding: "20px 10px" }}
           >
             <TableSortLabel
               active={orderBy === headCell.id}
               direction={orderBy === headCell.id ? order : "asc"}
-              onClick={createSortHandler(headCell.id)}
+              // onClick={createSortHandler(headCell.id)}
             >
               {headCell.label}
             </TableSortLabel>

@@ -10,15 +10,26 @@ import Paper from "@material-ui/core/Paper";
 import Checkbox from "@material-ui/core/Checkbox";
 import { withStyles } from "@material-ui/core/styles";
 
+import "../assets/styles/contactstable.scss";
 import CustomTableHead from "./CustomTableHead";
 
 import { contacts } from "../data";
 
 export const CustomTableRow = withStyles({
   root: {
-    cursor: "pointer"
+    cursor: "pointer",
+    padding: "20px 10px"
   }
 })(TableRow);
+
+export const CustomTableCell = withStyles({
+  root: {
+    cursor: "pointer",
+    padding: "20px 10px",
+    border: "none"
+  }
+})(TableCell);
+
 function ContactsTable(props) {
   const [selected, setSelected] = React.useState([]);
   const [order, setOrder] = React.useState("asc");
@@ -77,24 +88,37 @@ function ContactsTable(props) {
                 aria-checked={isItemSelected}
                 selected={isItemSelected}
               >
-                <TableCell padding="checkbox">
+                <CustomTableCell padding="checkbox">
                   <Checkbox
                     onClick={event => handleClick(event, contact.name)}
                     checked={isItemSelected}
                   />
-                </TableCell>
-                <TableCell onClick={() => handleOpenContactDetails(contact)}>
-                  {contact.name}
-                </TableCell>
-                <TableCell onClick={() => handleOpenContactDetails(contact)}>
+                </CustomTableCell>
+                <CustomTableCell
+                  onClick={() => handleOpenContactDetails(contact)}
+                >
+                  <div className="table-contact-name-container">
+                    <div className="table-avatar-container">
+                      <span>GI</span>
+                    </div>
+                    {contact.name}
+                  </div>
+                </CustomTableCell>
+                <CustomTableCell
+                  onClick={() => handleOpenContactDetails(contact)}
+                >
                   {contact.date}
-                </TableCell>
-                <TableCell onClick={() => handleOpenContactDetails(contact)}>
+                </CustomTableCell>
+                <CustomTableCell
+                  onClick={() => handleOpenContactDetails(contact)}
+                >
                   {contact.location}
-                </TableCell>
-                <TableCell onClick={() => handleOpenContactDetails(contact)}>
+                </CustomTableCell>
+                <CustomTableCell
+                  onClick={() => handleOpenContactDetails(contact)}
+                >
                   {contact.status}
-                </TableCell>
+                </CustomTableCell>
               </CustomTableRow>
             );
           })}
