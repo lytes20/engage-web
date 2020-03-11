@@ -47,7 +47,7 @@ function Contacts() {
       {/* Contacts Side bar  */}
       <div className="contacts-side">
         <div className="contacts-head-item">
-          <Link className="contacts-side-item">Import</Link>
+          <Link to="" className="contacts-side-item">Import</Link>
           <Button className="contacts-side-item">Actions</Button>
           <CreateNewButton className="contacts-side-item">
             <span className="item-label">Create New</span>

@@ -33,7 +33,7 @@ export const MenuButton = withStyles({
 export const DropDownList = withStyles(theme => ({
   root: {
     backgroundColor: "#522b77",
-    borderRadius: props => (props.isDropDown ? "4px" : "0"),
+    borderRadius: props => (props.hasborderradius ? "4px" : "0"),
     zIndex: "10",
     position: "absolute",
     width: "100%"
@@ -73,14 +73,8 @@ export const ShowGadgetsButton = withStyles({
 export const CustomTabs = withStyles({
   root: {
     backgroundColor: "#E6E1EF",
-    // width: "calc(100% + 10px)",
-    // margin: "-5px",
-    // borderRadius: 3,
     overflow: "visible",
     minHeight: "auto"
-  },
-  "&.MuiTab-wrapper": {
-    textTransform: "lowercase"
   },
   scroller: {
     overflow: "visible !important"

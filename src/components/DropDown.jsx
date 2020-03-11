@@ -17,12 +17,12 @@ export const DropDown = () => {
       </DropDownButton>
       {displayList && (
         <DropDownList
-          isDropDown={true}
+          hasborderradius={1}
           onMouseEnter={() => setDisplayList(true)}
           onMouseLeave={() => setDisplayList(false)}
         >
           {list.map(item => (
-            <ListItem button>{item}</ListItem>
+            <ListItem key={item} button>{item}</ListItem>
           ))}
         </DropDownList>
       )}
@@ -48,7 +48,7 @@ export const MenuDropDown = props => {
           onMouseLeave={() => setDisplayList(false)}
         >
           {list.map(item => (
-            <ListItem button>{item}</ListItem>
+            <ListItem key={item} button>{item}</ListItem>
           ))}
         </DropDownList>
       )}
