@@ -14,10 +14,11 @@ import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import "../assets/styles/contactdetailsside.scss";
 import { UserAvatar, ShowGadgetsButton } from "./general";
 
-function ContactDetailsSide() {
+function ContactDetailsSide(props) {
+  const { contact } = props;
   return (
     <Paper elevation={3} style={{ height: "100%" }}>
-      <div style={{ display:"flex"}}>
+      <div style={{ display: "flex" }}>
         <IconButton>
           <EditIcon />
         </IconButton>
@@ -39,7 +40,7 @@ function ContactDetailsSide() {
       </div>
       <div className="contact-details-contact">
         <UserAvatar />
-        <div>Gideon Bamuleseyo</div>
+        <div>{contact.name}</div>
         <p>Software Developer</p>
       </div>
       <div className="contact-details-side-icon-strip">

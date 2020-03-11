@@ -1,6 +1,9 @@
 import React from "react";
 
+import { compose } from "redux";
+import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+
 import IconButton from "@material-ui/core/IconButton";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
@@ -9,6 +12,7 @@ import ContactDetailsSide from "./ContactDetailSide";
 import ContactDetailsMain from "./ContactDetailsMain";
 
 function ContactDetails(props) {
+  const { contact } = props;
   function handleBack() {
     props.history.goBack();
   }
@@ -24,7 +28,7 @@ function ContactDetails(props) {
       {/* contact details side  */}
       <div className="contact-details-content">
         <div className="contact-details-side">
-          <ContactDetailsSide />
+          <ContactDetailsSide contact={contact} />
         </div>
 
         {/* contact details main  */}
@@ -36,4 +40,9 @@ function ContactDetails(props) {
   );
 }
 
-export default withRouter(ContactDetails);
+const mapStateToProps = state => ({
+  contact: state.appReducer.contact
+});
+
+const withConnect = connect(mapStateToProps);
+export default compose(withRouter, withConnect)(ContactDetails);
