@@ -6,6 +6,7 @@ import Tab from "@material-ui/core/Tab";
 
 import "../assets/styles/contactdetailsmain.scss";
 import { CustomTabs, CustomTab } from "./general";
+import { ActivitiesComponent, EmailsComponent, DealsComponent } from "./tabs";
 import { tabsItems } from "../data";
 
 function ContactDetailsSide() {
@@ -16,7 +17,7 @@ function ContactDetailsSide() {
   };
 
   return (
-    <Paper elevation={3}>
+    <Paper elevation={3} style={{ height: "100%"}}>
       <div className="custom-tabs-container">
         <CustomTabs value={value} onChange={handleChange}>
           {tabsItems.map(item => (
@@ -24,6 +25,9 @@ function ContactDetailsSide() {
           ))}
         </CustomTabs>
       </div>
+      {value === 0 && <ActivitiesComponent />}
+      {value === 1 && <EmailsComponent />}
+      {value === 2 && <DealsComponent />}
     </Paper>
   );
 }

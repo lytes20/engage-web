@@ -17,7 +17,7 @@ import { UserAvatar, ShowGadgetsButton } from "./general";
 const icons = [MailIcon];
 function ContactDetailsSide() {
   return (
-    <Paper elevation={3}>
+    <Paper elevation={3} style={{ height: "100%" }}>
       <div style={{ display:"flex"}}>
         <IconButton>
           <EditIcon />
