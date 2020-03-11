@@ -14,7 +14,7 @@ function ContactDetails(props) {
   }
   return (
     <div className="contact-details-container">
-      <div>
+      <div style={{ display: "flex", alignItems: "center" }}>
         <IconButton aria-label="Back" onClick={handleBack}>
           <ArrowBackIcon />
         </IconButton>
