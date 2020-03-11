@@ -34,7 +34,7 @@ export const MenuDropDown = props => {
   const { item } = props;
   const [displayList, setDisplayList] = useState(false);
   return (
-    <div style={{ position: "relative"}}>
+    <div style={{ position: "relative", width: "100%" }}>
       <MenuButton
         onMouseEnter={() => setDisplayList(true)}
         onMouseLeave={() => setDisplayList(false)}

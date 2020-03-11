@@ -7,7 +7,9 @@ export const DropDownButton = withStyles({
     cursor: "pointer",
     color: "#fff",
     "&.MuiButton-root": {
-      border: "1px solid white"
+      border: "1px solid white",
+      padding: "10px",
+      borderRadius: "4px"
     },
     "& .item-label": {
       color: "#fff",
@@ -20,7 +22,8 @@ export const MenuButton = withStyles({
   root: {
     cursor: "pointer",
     color: "#fff",
-    "&.MuiButton-root": {},
+    "&.MuiButton-root": {
+    },
     "& .item-label": {
       color: "#fff",
       textTransform: "capitalize"
@@ -35,7 +38,7 @@ export const DropDownList = withStyles(theme => ({
     zIndex: "10",
     position: "absolute",
     width: "100%",
-    marginTop: "9px"
+    // marginTop: "9px"
   }
 }))(List);
 
