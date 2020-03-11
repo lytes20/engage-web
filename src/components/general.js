@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { withStyles, Button, List } from "@material-ui/core";
+import { withStyles, Button, List, Tabs, Tab } from "@material-ui/core";
 
 export const DropDownButton = withStyles({
   root: {
@@ -22,8 +22,7 @@ export const MenuButton = withStyles({
   root: {
     cursor: "pointer",
     color: "#fff",
-    "&.MuiButton-root": {
-    },
+    "&.MuiButton-root": {},
     "& .item-label": {
       color: "#fff",
       textTransform: "capitalize"
@@ -37,7 +36,7 @@ export const DropDownList = withStyles(theme => ({
     borderRadius: props => (props.isDropDown ? "4px" : "0"),
     zIndex: "10",
     position: "absolute",
-    width: "100%",
+    width: "100%"
     // marginTop: "9px"
   }
 }))(List);
@@ -62,7 +61,7 @@ export const ShowGadgetsButton = withStyles({
       color: "#FD7556",
       border: "1px dashed #eee",
       borderRadius: "20%",
-      padding: "10px",
+      padding: "10px"
     },
     "& .item-label": {
       color: "#D35401",
@@ -70,3 +69,36 @@ export const ShowGadgetsButton = withStyles({
     }
   }
 })(Button);
+
+export const CustomTabs = withStyles({
+  root: {
+    backgroundColor: "#E6E1EF",
+    // width: "calc(100% + 10px)",
+    // margin: "-5px",
+    // borderRadius: 3,
+    overflow: "visible",
+    minHeight: "auto"
+  },
+  "&.MuiTab-wrapper": {
+    textTransform: "lowercase"
+  },
+  scroller: {
+    overflow: "visible !important"
+  },
+  indicator: {
+    height: "4px",
+    backgroundColor: "#9D8EB5"
+  }
+})(Tabs);
+
+export const CustomTab = withStyles(theme => ({
+  root: {
+    fontSize: 14,
+    fontWeight: 500,
+    fontWeight: theme.typography.fontWeightRegular,
+    minHeight: 40,
+    textTransform: "capitalize",
+    "&.Mui-selected": {
+    }
+  }
+}))(props => <Tab disableRipple {...props} />);
