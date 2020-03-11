@@ -3,8 +3,41 @@
   background-color: #6b488c;
   color: white;
   display: flex;
+  align-items: center;
+  .navbar-main {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+  .navbar-item {
+    margin-right: 10px;
+  }
+  .menu-items {
+    height: 100%;
+  }
+  .menu-item {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    height: 100%;
+    &:hover {
+      background-color: #522b77;
+    }
+  }
 }
 
 .navbar-container div {
-//   border: 1px solid green;
+  // border: 1px solid green;
+}
+.profile-pic-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.profile-pic-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
