@@ -7,6 +7,7 @@ import "../assets/styles/contacts.scss";
 
 import ContactsTable from "./ContactsTable";
 import { DropDown, MenuDropDown } from "./DropDown";
+import { contacts } from "../data";
 
 export const CreateNewButton = withStyles({
   root: {
@@ -29,7 +30,7 @@ function Contacts() {
       {/* Contacts main container  */}
       <div className="contacts-main">
         <div className="contacts-heading contacts-head-item">
-          <h1>Contacts</h1>
+          <h1>Contacts</h1><span>({contacts.length})</span>
           <div className="sort-by-container">
             <p>Sort By</p>
             Created Date
