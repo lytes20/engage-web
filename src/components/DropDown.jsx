@@ -1,0 +1,57 @@
+import React, { useState } from "react";
+import { DropDownButton, MenuButton, DropDownList } from "./general";
+import { ExpandMore as ExpandMoreIcon } from "@material-ui/icons";
+import { ListItem } from "@material-ui/core";
+
+const list = ["Marketing", "Sales"];
+export const DropDown = () => {
+  const [displayList, setDisplayList] = useState(false);
+  return (
+    <div style={{ position: "relative" }}>
+      <DropDownButton
+        onMouseEnter={() => setDisplayList(true)}
+        onMouseLeave={() => setDisplayList(false)}
+      >
+        <span className="item-label">Marketing</span>
+        <ExpandMoreIcon style={{ fill: "white" }} />
+      </DropDownButton>
+      {displayList && (
+        <DropDownList
+          isDropDown={true}
+          onMouseEnter={() => setDisplayList(true)}
+          onMouseLeave={() => setDisplayList(false)}
+        >
+          {list.map(item => (
+            <ListItem button>{item}</ListItem>
+          ))}
+        </DropDownList>
+      )}
+    </div>
+  );
+};
+
+export const MenuDropDown = props => {
+  const { item } = props;
+  const [displayList, setDisplayList] = useState(false);
+  return (
+    <div style={{ position: "relative"}}>
+      <MenuButton
+        onMouseEnter={() => setDisplayList(true)}
+        onMouseLeave={() => setDisplayList(false)}
+      >
+        <span className="item-label">{item}</span>
+        <ExpandMoreIcon style={{ fill: "white" }} />
+      </MenuButton>
+      {displayList && (
+        <DropDownList
+          onMouseEnter={() => setDisplayList(true)}
+          onMouseLeave={() => setDisplayList(false)}
+        >
+          {list.map(item => (
+            <ListItem button>{item}</ListItem>
+          ))}
+        </DropDownList>
+      )}
+    </div>
+  );
+};

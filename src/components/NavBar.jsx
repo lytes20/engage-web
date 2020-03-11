@@ -7,7 +7,8 @@ import { ExpandMore as ExpandMoreIcon } from "@material-ui/icons";
 
 import "../assets/styles/navbar.scss";
 import ProfilePic from "../assets/images/Gideon_Bamuleseyo.jpg";
-import { DropDownButton, MenuButton } from "./general";
+import { DropDownButton, MenuButton, DropDownList } from "./general";
+import { DropDown, MenuDropDown } from "./DropDown";
 
 const menuItems = [
   "Contacts",
@@ -27,10 +28,7 @@ function NavBar() {
           </IconButton>
         </div>
         <div className="navbar-item">
-          <DropDownButton>
-            <span className="item-label">Marketing</span>
-            <ExpandMoreIcon style={{ fill: "white" }} />
-          </DropDownButton>
+          <DropDown />
         </div>
         <div className="navbar-item">
           <IconButton>
@@ -41,9 +39,7 @@ function NavBar() {
           <div className="menu-items">
             {menuItems.map(item => (
               <div className="menu-item" key={item}>
-                <MenuButton>
-                  <span className="item-label">{item}</span>
-                </MenuButton>
+                <MenuDropDown item={item} />
               </div>
             ))}
           </div>
