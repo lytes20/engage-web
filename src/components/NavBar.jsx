@@ -3,11 +3,9 @@ import React from "react";
 import AcUnitIcon from "@material-ui/icons/AcUnit";
 import SearchIcon from "@material-ui/icons/Search";
 import IconButton from "@material-ui/core/IconButton";
-import { ExpandMore as ExpandMoreIcon } from "@material-ui/icons";
 
 import "../assets/styles/navbar.scss";
 import ProfilePic from "../assets/images/Gideon_Bamuleseyo.jpg";
-import { DropDownButton, MenuButton, DropDownList } from "./general";
 import { DropDown, MenuDropDown } from "./DropDown";
 
 const menuItems = [

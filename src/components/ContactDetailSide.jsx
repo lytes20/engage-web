@@ -14,7 +14,6 @@ import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import "../assets/styles/contactdetailsside.scss";
 import { UserAvatar, ShowGadgetsButton } from "./general";
 
-const icons = [MailIcon];
 function ContactDetailsSide() {
   return (
     <Paper elevation={3} style={{ height: "100%" }}>

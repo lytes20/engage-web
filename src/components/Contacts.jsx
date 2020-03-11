@@ -6,7 +6,6 @@ import { withStyles } from "@material-ui/core";
 import "../assets/styles/contacts.scss";
 
 import ContactsTable from "./ContactsTable";
-import { DropDown, MenuDropDown } from "./DropDown";
 import { contacts } from "../data";
 
 export const CreateNewButton = withStyles({

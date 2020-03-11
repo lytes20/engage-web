@@ -37,7 +37,6 @@ export const DropDownList = withStyles(theme => ({
     zIndex: "10",
     position: "absolute",
     width: "100%"
-    // marginTop: "9px"
   }
 }))(List);
 
@@ -89,7 +88,6 @@ export const CustomTab = withStyles(theme => ({
   root: {
     fontSize: 14,
     fontWeight: 500,
-    fontWeight: theme.typography.fontWeightRegular,
     minHeight: 40,
     textTransform: "capitalize",
     "&.Mui-selected": {
