@@ -1,7 +1,15 @@
-.contact-details-contact {
+.contact-brief {
   display: flex;
 }
-
+.contact-details-side-item {
+  padding: 20px;
+  .owner {
+    font-size: 14px;
+    color: #b0b3b4;
+    margin-top: 12px;
+    margin-bottom: 5px;
+  }
+}
 .contact-details-side-icon-strip {
   background-color: #ececec;
 }
@@ -9,7 +17,6 @@
 .contact-details-side-a-section {
   border-top: 1px dashed #eee;
   border-bottom: 1px dashed #eee;
-//   margin: 20px 0;
 }
 
 .contact-details-side-contact-info {
@@ -26,7 +33,7 @@
   margin: 20px 0;
 }
 
-.date{
+.date {
   color: #999;
   font-size: 12px;
   padding: 20px;

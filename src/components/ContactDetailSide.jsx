@@ -8,10 +8,10 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import MailIcon from "@material-ui/icons/Mail";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 
 import "../assets/styles/contactdetailsside.scss";
+import IconStripe from "./IconStripe";
 import { UserAvatar, ShowGadgetsButton } from "./general";
 
 function ContactDetailsSide(props) {
@@ -38,35 +38,25 @@ function ContactDetailsSide(props) {
           </IconButton>
         </div>
       </div>
-      <div className="contact-details-contact">
+      <div className="contact-details-side-item contact-brief">
         <UserAvatar />
-        <div>{contact.name}</div>
-        <p>Software Developer</p>
+        <div>
+          {contact.name}
+          <p>Software Developer</p>
+        </div>
       </div>
       <div className="contact-details-side-icon-strip">
-        <IconButton>
-          <MailIcon />
-        </IconButton>
-        <IconButton>
-          <MailIcon />
-        </IconButton>
-        <IconButton>
-          <MailIcon />
-        </IconButton>
-        <IconButton>
-          <MailIcon />
-        </IconButton>
-        <IconButton>
-          <MailIcon />
-        </IconButton>
-        <IconButton>
-          <MailIcon />
-        </IconButton>
-        <IconButton>
-          <MailIcon />
-        </IconButton>
+        <IconStripe />
       </div>
-      <div>Owner Gideon Bamuleseyo</div>
+      <div className="contact-details-side-item">
+        <span className="owner">Owner</span>
+        <div style={{ display: "flex", alignItems:"center" }}>
+          <UserAvatar />
+          <div>
+            <p>Gideon Bamuleseyo</p>
+          </div>
+        </div>
+      </div>
       <div className="contact-details-side-a-section">
         <div>
           <ShowGadgetsButton>
