@@ -20,7 +20,6 @@ export const CustomTableRow = withStyles({
   }
 })(TableRow);
 function ContactsTable(props) {
-
   const [selected, setSelected] = React.useState([]);
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("id");
@@ -28,6 +27,33 @@ function ContactsTable(props) {
   function handleOpenContactDetails(contact) {
     props.history.push("/contact-details");
   }
+  const handleSelectAllClick = event => {
+    if (event.target.checked) {
+      const newSelecteds = contacts.map(n => n.name);
+      setSelected(newSelecteds);
+      return;
+    }
+    setSelected([]);
+  };
+  const handleClick = (event, name) => {
+    const selectedIndex = selected.indexOf(name);
+    let newSelected = [];
+
+    if (selectedIndex === -1) {
+      newSelected = newSelected.concat(selected, name);
+    } else if (selectedIndex === 0) {
+      newSelected = newSelected.concat(selected.slice(1));
+    } else if (selectedIndex === selected.length - 1) {
+      newSelected = newSelected.concat(selected.slice(0, -1));
+    } else if (selectedIndex > 0) {
+      newSelected = newSelected.concat(
+        selected.slice(0, selectedIndex),
+        selected.slice(selectedIndex + 1)
+      );
+    }
+
+    setSelected(newSelected);
+  };
 
   const isSelected = name => selected.indexOf(name) !== -1;
 
@@ -38,6 +64,8 @@ function ContactsTable(props) {
           order={order}
           orderBy={orderBy}
           rowCount={contacts.length}
+          numSelected={selected.length}
+          onSelectAllClick={handleSelectAllClick}
         />
         <TableBody>
           {contacts.map(contact => {
@@ -46,16 +74,27 @@ function ContactsTable(props) {
               <CustomTableRow
                 hover
                 key={contact.name}
-                onClick={() => handleOpenContactDetails(contact)}
+                aria-checked={isItemSelected}
                 selected={isItemSelected}
               >
                 <TableCell padding="checkbox">
-                  <Checkbox checked={isItemSelected} />
+                  <Checkbox
+                    onClick={event => handleClick(event, contact.name)}
+                    checked={isItemSelected}
+                  />
                 </TableCell>
-                <TableCell>{contact.name}</TableCell>
-                <TableCell>{contact.date}</TableCell>
-                <TableCell>{contact.location}</TableCell>
-                <TableCell>{contact.status}</TableCell>
+                <TableCell onClick={() => handleOpenContactDetails(contact)}>
+                  {contact.name}
+                </TableCell>
+                <TableCell onClick={() => handleOpenContactDetails(contact)}>
+                  {contact.date}
+                </TableCell>
+                <TableCell onClick={() => handleOpenContactDetails(contact)}>
+                  {contact.location}
+                </TableCell>
+                <TableCell onClick={() => handleOpenContactDetails(contact)}>
+                  {contact.status}
+                </TableCell>
               </CustomTableRow>
             );
           })}
