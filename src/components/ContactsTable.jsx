@@ -1,6 +1,9 @@
 import React from "react";
 
+import { compose } from "redux";
+import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -14,6 +17,7 @@ import "../assets/styles/contactstable.scss";
 import CustomTableHead from "./CustomTableHead";
 
 import { contacts } from "../data";
+import { viewContact } from "../actions/appActions";
 
 export const CustomTableRow = withStyles({
   root: {
@@ -31,19 +35,13 @@ export const CustomTableCell = withStyles({
 })(TableCell);
 
 function ContactsTable(props) {
+  const { viewContact } = props;
   const [selected, setSelected] = React.useState([]);
   const [order] = React.useState("asc");
   const [orderBy] = React.useState("id");
-  const initialState = {
-    contact: {}
-  };
 
-  const reducer = (state, action) => {
-    console.log(state);
-  };
-  const [state, dispatch] = React.useReducer(reducer, initialState);
   function handleOpenContactDetails(contact) {
-    dispatch({ type: "SELECT_CONTACT" });
+    viewContact(contact);
     props.history.push("/contact-details");
   }
   const handleSelectAllClick = event => {
@@ -136,4 +134,9 @@ function ContactsTable(props) {
   );
 }
 
-export default withRouter(ContactsTable);
+const mapDispatchToProps = dispatch => ({
+  viewContact: contact => dispatch(viewContact(contact))
+});
+
+const withConnect = connect(null, mapDispatchToProps);
+export default compose(withRouter, withConnect)(ContactsTable);
