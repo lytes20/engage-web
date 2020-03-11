@@ -34,8 +34,16 @@ function ContactsTable(props) {
   const [selected, setSelected] = React.useState([]);
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("id");
+  const initialState = {
+    contact: {}
+  };
 
+  const reducer = (state, action) => {
+    console.log(state);
+  };
+  const [state, dispatch] = React.useReducer(reducer, initialState);
   function handleOpenContactDetails(contact) {
+    dispatch({ type: "SELECT_CONTACT" });
     props.history.push("/contact-details");
   }
   const handleSelectAllClick = event => {
