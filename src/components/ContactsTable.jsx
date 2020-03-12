@@ -16,8 +16,8 @@ import { withStyles } from "@material-ui/core/styles";
 import "../assets/styles/contactstable.scss";
 import CustomTableHead from "./CustomTableHead";
 
-import { contacts } from "../data";
 import { viewContact } from "../actions/appActions";
+import { convertStrToDate } from "../services/utility";
 
 export const CustomTableRow = withStyles({
   root: {
@@ -35,7 +35,7 @@ export const CustomTableCell = withStyles({
 })(TableCell);
 
 function ContactsTable(props) {
-  const { viewContact } = props;
+  const { viewContact, contacts } = props;
   const [selected, setSelected] = React.useState([]);
   const [order] = React.useState("asc");
   const [orderBy] = React.useState("id");
@@ -86,11 +86,15 @@ function ContactsTable(props) {
         />
         <TableBody>
           {contacts.map(contact => {
-            const isItemSelected = isSelected(contact.name);
+            const contactName = `${contact.first_name} ${contact.first_name}`;
+            const contactInitials = `${contact.first_name.charAt(
+              0
+            )}${contact.last_name.charAt(0)}`;
+            const isItemSelected = isSelected(contactName);
             return (
               <CustomTableRow
                 hover
-                key={contact.name}
+                key={contact.id}
                 aria-checked={isItemSelected}
                 selected={isItemSelected}
               >
@@ -105,20 +109,20 @@ function ContactsTable(props) {
                 >
                   <div className="table-contact-name-container">
                     <div className="table-avatar-container">
-                      <span>GI</span>
+                      <span>{contactInitials}</span>
                     </div>
-                    {contact.name}
+                    {contactName}
                   </div>
                 </CustomTableCell>
                 <CustomTableCell
                   onClick={() => handleOpenContactDetails(contact)}
                 >
-                  {contact.date}
+                  {contact.created_at && convertStrToDate(contact.created_at)}
                 </CustomTableCell>
                 <CustomTableCell
                   onClick={() => handleOpenContactDetails(contact)}
                 >
-                  {contact.location}
+                  {contact.address ? contact.address : "_"}
                 </CustomTableCell>
                 <CustomTableCell
                   onClick={() => handleOpenContactDetails(contact)}
