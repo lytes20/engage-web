@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiRequest = axios.create({
-  baseURL: "https://lytes-json-server.herokuapp.com/"
+  baseURL: "http://localhost:3000"
 });
 
 const api = {

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Button from "@material-ui/core/Button";
 
 import "../assets/styles/contacts.scss";
@@ -41,13 +44,19 @@ function Contacts(props) {
             setContacts(updatedContacts);
           }
         }
-        console.log(res);
+        toast.success("Contact successfully updated", {
+          autoClose: 3000
+        });
       })
-      .catch(error => console.log(error));
+      .catch(error =>
+        toast.error(error.message, {
+          autoClose: 3000
+        })
+      );
     closeEditContact();
   };
 
-  const deleteContact = (contactID) => {
+  const deleteContact = contactID => {
     api
       .deleteContact(contactID)
       .then(res => {
@@ -59,17 +68,25 @@ function Contacts(props) {
             setContacts(updatedContacts);
           }
         }
-        console.log(res);
+        toast.success("Contact successfully Deleted", {
+          autoClose: 3000
+        });
       })
-      .catch(error => console.log(error));
+      .catch(error =>
+        toast.error(error.message, {
+          autoClose: 3000
+        })
+      );
 
-      closeDeleteContact();
+    closeDeleteContact();
   };
 
   return (
     <div className="contacts-container">
+      <ToastContainer position="top-right" />
       <EditContact updateContact={updateContact} />
-      <DeleteContact deleteContact={deleteContact}/>
+      <DeleteContact deleteContact={deleteContact} />
+
       {/* Contacts main container  */}
       <div className="contacts-main">
         <div className="contacts-heading contacts-head-item">
