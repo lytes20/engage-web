@@ -9,7 +9,6 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
 import "../assets/styles/createnewcontact.scss";
-import { ContactModel } from "../models/ContactModel";
 import api from "../services/api";
 
 export const CreateNewButton = withStyles({

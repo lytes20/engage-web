@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
-import {
-  DropDownButton,
-  MenuButton,
-  DropDownList,
-  EllipsisButton,
-  ContactActionsDropDownList
-} from "./general";
-import { ExpandMore as ExpandMoreIcon } from "@material-ui/icons";
+import { EllipsisButton, ContactActionsDropDownList } from "./general";
 import { ListItem } from "@material-ui/core";
 import { openEditContact, openDeleteContact } from "../actions/appActions";
 
@@ -30,11 +23,11 @@ const ContactActionsDropDown = props => {
     setDisplayList(false);
     switch (item.id) {
       case 1:
-        console.log("Edit was clicked");
         handleEditContact(contact);
         return;
       case 5:
         openDeleteContact(contact);
+        return
       default:
         return;
     }
