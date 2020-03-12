@@ -16,6 +16,7 @@ import { UserAvatar, ShowGadgetsButton } from "./general";
 
 function ContactDetailsSide(props) {
   const { contact } = props;
+  const contactName = `${contact.first_name} ${contact.first_name}`;
   return (
     <Paper elevation={3} style={{ height: "100%" }}>
       <div style={{ display: "flex" }}>
@@ -41,7 +42,7 @@ function ContactDetailsSide(props) {
       <div className="contact-details-side-item contact-brief">
         <UserAvatar />
         <div>
-          {contact.name}
+          {contactName}
           <p>Software Developer</p>
         </div>
       </div>
