@@ -29,21 +29,15 @@ export const CreateNewButton = withStyles({
   }
 })(Button);
 function EditContact(props) {
-  const { contact, openDeleteContact, closeDeleteContact } = props;
+  const {
+    contact,
+    openDeleteContact,
+    closeDeleteContact,
+    deleteContact
+  } = props;
 
   const handleClose = () => {
     closeDeleteContact();
-  };
-
-  const deleteContact = () => {
-    api
-      .deleteContact(contact.id)
-      .then(res => {
-        console.log(res);
-      })
-      .catch(error => console.log(error));
-
-    handleClose();
   };
 
   return (
@@ -62,7 +56,7 @@ function EditContact(props) {
         <Button onClick={handleClose} color="primary">
           Cancel
         </Button>
-        <Button onClick={deleteContact} color="primary">
+        <Button onClick={() => deleteContact(contact.id)} color="primary">
           OK
         </Button>
       </DialogActions>

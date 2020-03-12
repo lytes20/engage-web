@@ -11,11 +11,11 @@ import CreateNewContact from "./CreateNewContact";
 import EditContact from "./EditContact";
 import DeleteContact from "./DeleteContact";
 
-import { closeEditContact } from "../actions/appActions";
+import { closeEditContact, closeDeleteContact } from "../actions/appActions";
 import api from "../services/api";
 
 function Contacts(props) {
-  const { closeEditContact } = props;
+  const { closeEditContact, closeDeleteContact } = props;
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ function Contacts(props) {
         let updatedContacts = [...contacts];
         for (var i in contacts) {
           if (contacts[i].id === contactID) {
-            updatedContacts[i] = { id:contactID,  ...data };
+            updatedContacts[i] = { id: contactID, ...data };
             setContacts(updatedContacts);
           }
         }
@@ -47,10 +47,29 @@ function Contacts(props) {
     closeEditContact();
   };
 
+  const deleteContact = (contactID) => {
+    api
+      .deleteContact(contactID)
+      .then(res => {
+        let updatedContacts = [...contacts];
+        for (var i in contacts) {
+          if (contacts[i].id === contactID) {
+            const index = updatedContacts.indexOf(updatedContacts[i]);
+            updatedContacts.splice(index, 1);
+            setContacts(updatedContacts);
+          }
+        }
+        console.log(res);
+      })
+      .catch(error => console.log(error));
+
+      closeDeleteContact();
+  };
+
   return (
     <div className="contacts-container">
       <EditContact updateContact={updateContact} />
-      <DeleteContact />
+      <DeleteContact deleteContact={deleteContact}/>
       {/* Contacts main container  */}
       <div className="contacts-main">
         <div className="contacts-heading contacts-head-item">
@@ -101,6 +120,7 @@ function Contacts(props) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  closeEditContact: () => dispatch(closeEditContact())
+  closeEditContact: () => dispatch(closeEditContact()),
+  closeDeleteContact: () => dispatch(closeDeleteContact())
 });
 export default connect(null, mapDispatchToProps)(Contacts);
