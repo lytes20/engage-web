@@ -1,0 +1,444 @@
+{
+  "contacts": [
+    {
+      "id": 94,
+      "first_name": "Byasi",
+      "last_name": "Simon",
+      "email": "stuartdambi@outlook.com",
+      "address": "Wobulenzi",
+      "phone_number": "256771321133",
+      "company_name": "Monkey Pesa",
+      "created_at": "2020-03-06T13:27:09.981371",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Suppliers",
+        "id": 2,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 103,
+      "first_name": "Kenneth",
+      "last_name": "Ntende",
+      "email": "ntendekenneth@hotmail.com",
+      "address": "Mamerito Road",
+      "phone_number": "256757537658",
+      "company_name": "",
+      "created_at": "2020-03-10T06:44:04.811324",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Suppliers",
+        "id": 2,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 110,
+      "first_name": "Kisoro",
+      "last_name": "Jonah",
+      "email": "jonakisoro@gmail.com",
+      "address": "Ngobe",
+      "phone_number": "+256703897435",
+      "company_name": null,
+      "created_at": "2020-03-10T08:25:19.916228",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Suppliers",
+        "id": 2,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 78,
+      "first_name": "KY",
+      "last_name": "Martha",
+      "email": "martha@yahoo.com",
+      "address": "Ntinda, Kigowa Road",
+      "phone_number": "256771321133",
+      "company_name": "Monkey Pesa",
+      "created_at": "2020-02-27T14:24:31.871335",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Suppliers",
+        "id": 2,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 90,
+      "first_name": "Larryk",
+      "last_name": "Piu",
+      "email": "larrypius2013@gmail.com",
+      "address": "Kampala",
+      "phone_number": "256771321133",
+      "company_name": "Monkey Pesa",
+      "created_at": "2020-03-02T08:27:18.999691",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Suppliers",
+        "id": 2,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 91,
+      "first_name": "Larrym",
+      "last_name": "Kayondo",
+      "email": "larrypius2013@gmail.com",
+      "address": "Kampala",
+      "phone_number": "256771321133",
+      "company_name": "Monkey Pesa",
+      "created_at": "2020-03-02T08:49:47.278213",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Suppliers",
+        "id": 2,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 41,
+      "first_name": "MacGregor",
+      "last_name": "Kato Kiyonga",
+      "email": "mcdamian@monkeypesa.com",
+      "address": "Jinja",
+      "phone_number": "256771321133",
+      "company_name": "Monkey Pesa",
+      "created_at": "2020-02-02T00:00:00",
+      "contact_type": {
+        "name": "Clerk",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Clients",
+        "id": 3,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 93,
+      "first_name": "Mukene",
+      "last_name": "Rogers",
+      "email": "stuartdambi@witsmind.com",
+      "address": "Ntinda, Kigowa Road",
+      "phone_number": "256771321133",
+      "company_name": "Monkey Pesa",
+      "created_at": "2020-03-06T13:22:12.596568",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Suppliers",
+        "id": 2,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 107,
+      "first_name": "Musuuza",
+      "last_name": "Leonard",
+      "email": "musleo@gmail.com",
+      "address": "Mbale, Kinoni",
+      "phone_number": "+256750904022",
+      "company_name": null,
+      "created_at": "2020-03-10T08:19:49.811255",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Suppliers",
+        "id": 2,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 109,
+      "first_name": "Musuuza",
+      "last_name": "Leonard",
+      "email": "musleo@gmail.com",
+      "address": "Mbale, Kinoni",
+      "phone_number": "+256750904022",
+      "company_name": null,
+      "created_at": "2020-03-10T08:23:28.324206",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Suppliers",
+        "id": 2,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 106,
+      "first_name": "Nakawunde",
+      "last_name": "Ruth",
+      "email": "nkruth@yahoo.com",
+      "address": null,
+      "phone_number": "+2567347838484",
+      "company_name": null,
+      "created_at": "2020-03-10T07:38:50.087835",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Suppliers",
+        "id": 2,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 108,
+      "first_name": "Nakawunde",
+      "last_name": "Ruth",
+      "email": "nkruth@gmail.com",
+      "address": null,
+      "phone_number": "+2567347838484",
+      "company_name": null,
+      "created_at": "2020-03-10T08:20:09.508189",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Suppliers",
+        "id": 2,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 74,
+      "first_name": "Ronald",
+      "last_name": "Adonyo",
+      "email": "ronald.adonyo@gmail.com",
+      "address": "Plot 5 Lugala",
+      "phone_number": "256771321133",
+      "company_name": "Monkey Pesa",
+      "created_at": "2020-02-23T18:04:33.154021",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Suppliers",
+        "id": 2,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 102,
+      "first_name": "Ronald",
+      "last_name": "Adonyo Test 012",
+      "email": "ronald.adonyo@gmail.com",
+      "address": "500 LA TERRAZA BLVD",
+      "phone_number": "4158408682",
+      "company_name": "Irio Systems",
+      "created_at": "2020-03-10T06:32:50.562472",
+      "contact_type": {
+        "name": "Clerk",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Clients",
+        "id": 3,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 100,
+      "first_name": "Ronald Test 3",
+      "last_name": "Adonyo",
+      "email": "ronald.adonyo@gmail.com",
+      "address": "Plot 5 Lugala",
+      "phone_number": "256771321133",
+      "company_name": "Monkey Pesa",
+      "created_at": "2020-03-09T11:20:07.200757",
+      "contact_type": {
+        "name": "Clerk",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Leads",
+        "id": 4,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 101,
+      "first_name": "Ronald Test 5",
+      "last_name": "Adonyo",
+      "email": "ronald.adonyo@gmail.com",
+      "address": "Plot 5 Lugala",
+      "phone_number": "0771321133",
+      "company_name": "Irio Systems",
+      "created_at": "2020-03-09T13:16:37.110192",
+      "contact_type": {
+        "name": "Clerk",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Clients",
+        "id": 3,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 39,
+      "first_name": "Ronny",
+      "last_name": "Mukasa Balikuddembe",
+      "email": "ronald@monkeypesa.com",
+      "address": "Jinja",
+      "phone_number": "256771321133",
+      "company_name": "Monkey Pesa",
+      "created_at": "2020-02-02T00:00:00",
+      "contact_type": {
+        "name": "Clerk",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Clients",
+        "id": 3,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 26,
+      "first_name": "Sam",
+      "last_name": "Kayongo",
+      "email": "samkays@monkeypesa.com",
+      "address": "kampala",
+      "phone_number": "256771321133",
+      "company_name": "Monkey Pesa",
+      "created_at": "2020-02-02T00:00:00",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Leads",
+        "id": 4,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 104,
+      "first_name": "Sandra",
+      "last_name": "Namakula",
+      "email": "snamakula22@gmail.com",
+      "address": "Kla",
+      "phone_number": "+256704227484",
+      "company_name": "MonkeyPesa Limited",
+      "created_at": "2020-03-10T07:00:13.834659",
+      "contact_type": {
+        "name": "Clerk",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Clients",
+        "id": 3,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 77,
+      "first_name": "Stuart",
+      "last_name": "Dambi",
+      "email": "stuartdambi@gmail.com",
+      "address": "Ntinda, Kigowa Road",
+      "phone_number": "256771321133",
+      "company_name": "Monkey Pesa",
+      "created_at": "2020-02-24T12:05:03.009092",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Suppliers",
+        "id": 2,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 98,
+      "first_name": "Test List",
+      "last_name": "Adonyo",
+      "email": "ronald.adonyo@gmail.com",
+      "address": "Plot 5 Lugala",
+      "phone_number": "256771321133",
+      "company_name": "Monkey Pesa",
+      "created_at": "2020-03-09T11:11:38.555409",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Clients",
+        "id": 3,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    },
+    {
+      "id": 99,
+      "first_name": "Test List 2",
+      "last_name": "Adonyo",
+      "email": "ronald.adonyo@gmail.com",
+      "address": "Plot 5 Lugala",
+      "phone_number": "256771321133",
+      "company_name": "Monkey Pesa",
+      "created_at": "2020-03-09T11:12:41.116141",
+      "contact_type": {
+        "name": "Manager",
+        "__typename": "contact_type"
+      },
+      "contact_list": {
+        "name": "Leads",
+        "id": 4,
+        "__typename": "contact_list"
+      },
+      "__typename": "contact"
+    }
+  ]
+}

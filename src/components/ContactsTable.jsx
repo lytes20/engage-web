@@ -36,6 +36,7 @@ export const CustomTableCell = withStyles({
 
 function ContactsTable(props) {
   const { viewContact, contacts } = props;
+  console.log('Contacts -->', contacts)
   const [selected, setSelected] = React.useState([]);
   const [order] = React.useState("asc");
   const [orderBy] = React.useState("id");

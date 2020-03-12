@@ -1,27 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import { withStyles } from "@material-ui/core";
 
 import "../assets/styles/contacts.scss";
 
 import ContactsTable from "./ContactsTable";
+import CreateNewContact from './CreateNewContact'
 import api from "../services/api";
 
-export const CreateNewButton = withStyles({
-  root: {
-    cursor: "pointer",
-    backgroundColor: "#FD7556",
-    color: "#fff",
-    "&.MuiButton-root": {
-      backgroundColor: "#FD7556"
-    },
-    "& .item-label": {
-      color: "#fff",
-      textTransform: "capitalize"
-    }
-  }
-})(Button);
 
 function Contacts() {
   const [contacts, setContacts] = useState([]);
@@ -65,9 +51,10 @@ function Contacts() {
             Import
           </Link>
           <Button className="contacts-side-item">Actions</Button>
-          <CreateNewButton className="contacts-side-item">
+          <CreateNewContact />
+          {/* <CreateNewButton className="contacts-side-item" onClick={ () => console.log("I get clicked bitches")}>
             <span className="item-label">Create New</span>
-          </CreateNewButton>
+          </CreateNewButton> */}
         </div>
         <div className="contacts-side-actions-container">
           <Button
