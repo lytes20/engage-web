@@ -18,6 +18,7 @@ import CustomTableHead from "./CustomTableHead";
 
 import { viewContact } from "../actions/appActions";
 import { convertStrToDate } from "../services/utility";
+import ContactActionsDropDown from './ContactActionsDropDown'
 
 export const CustomTableRow = withStyles({
   root: {
@@ -36,7 +37,7 @@ export const CustomTableCell = withStyles({
 
 function ContactsTable(props) {
   const { viewContact, contacts } = props;
-  console.log('Contacts -->', contacts)
+  console.log("Contacts -->", contacts);
   const [selected, setSelected] = React.useState([]);
   const [order] = React.useState("asc");
   const [orderBy] = React.useState("id");
@@ -130,6 +131,7 @@ function ContactsTable(props) {
                 >
                   {contact.status}
                 </CustomTableCell>
+                <CustomTableCell><ContactActionsDropDown /></CustomTableCell>
               </CustomTableRow>
             );
           })}

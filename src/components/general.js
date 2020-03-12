@@ -30,9 +30,29 @@ export const MenuButton = withStyles({
   }
 })(Button);
 
+export const EllipsisButton = withStyles({
+  root: {
+    cursor: "pointer",
+    "&.MuiButton-root": {},
+    "& .item-label": {
+      color: "#43506a",
+    }
+  }
+})(Button);
+
 export const DropDownList = withStyles(theme => ({
   root: {
     backgroundColor: "#522b77",
+    borderRadius: props => (props.hasborderradius ? "4px" : "0"),
+    zIndex: "10",
+    position: "absolute",
+    width: "100%"
+  }
+}))(List);
+
+export const ContactActionsDropDownList = withStyles(theme => ({
+  root: {
+    backgroundColor: "white",
     borderRadius: props => (props.hasborderradius ? "4px" : "0"),
     zIndex: "10",
     position: "absolute",
