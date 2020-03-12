@@ -18,7 +18,7 @@ import CustomTableHead from "./CustomTableHead";
 
 import { viewContact } from "../actions/appActions";
 import { convertStrToDate } from "../services/utility";
-import ContactActionsDropDown from './ContactActionsDropDown'
+import ContactActionsDropDown from "./ContactActionsDropDown";
 
 export const CustomTableRow = withStyles({
   root: {
@@ -131,7 +131,9 @@ function ContactsTable(props) {
                 >
                   {contact.status}
                 </CustomTableCell>
-                <CustomTableCell><ContactActionsDropDown /></CustomTableCell>
+                <CustomTableCell>
+                  <ContactActionsDropDown contact={contact} />
+                </CustomTableCell>
               </CustomTableRow>
             );
           })}

@@ -7,7 +7,7 @@ import "../assets/styles/contacts.scss";
 import ContactsTable from "./ContactsTable";
 import CreateNewContact from './CreateNewContact'
 import api from "../services/api";
-
+import EditContact from './EditContact'
 
 function Contacts() {
   const [contacts, setContacts] = useState([]);
@@ -26,6 +26,7 @@ function Contacts() {
 
   return (
     <div className="contacts-container">
+      <EditContact />
       {/* Contacts main container  */}
       <div className="contacts-main">
         <div className="contacts-heading contacts-head-item">
