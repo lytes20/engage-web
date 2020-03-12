@@ -29,11 +29,8 @@ export const CreateNewButton = withStyles({
   }
 })(Button);
 function EditContact(props) {
-  console.log("Edit contact is called", props);
-  const { contact, openEditContact, closeEditContact } = props;
-  console.log("Edit contact is called", contact.first_name);
+  const { contact, openEditContact, closeEditContact, updateContact } = props;
 
-  const [open, setOpen] = useState(openEditContact);
   const [firstName, setFirstName] = useState(contact.first_name);
   const [lastName, setLastName] = useState(contact.last_name);
   const [email, setEmail] = useState(contact.email);
@@ -46,7 +43,6 @@ function EditContact(props) {
 
   const handleClose = () => {
     closeEditContact();
-    setOpen(false);
   };
 
   useEffect(() => {
@@ -61,8 +57,10 @@ function EditContact(props) {
       // cleanup
     };
   }, [contact]);
-  const updateContact = () => {
+
+  const handleUpdateContact = () => {
     const updatedData = {
+      ...contact,
       first_name: firstName,
       last_name: lastName,
       email: email,
@@ -70,15 +68,7 @@ function EditContact(props) {
       phone_number: phoneNumber,
       company_name: company
     };
-    // const data = new ContactModel(newContact);
-    api
-      .updateContact(contact.id, updatedData)
-      .then(res => {
-        console.log(res);
-      })
-      .catch(error => console.log(error));
-
-    handleClose();
+    updateContact(contact.id, updatedData);
   };
 
   return (
@@ -165,7 +155,7 @@ function EditContact(props) {
         </form>
       </DialogContent>
       <DialogActions>
-        <Button onClick={updateContact} color="primary">
+        <Button onClick={handleUpdateContact} color="primary">
           Submit
         </Button>
         <Button onClick={handleClose} color="primary">

@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from "react";
+
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
 import "../assets/styles/contacts.scss";
 
 import ContactsTable from "./ContactsTable";
-import CreateNewContact from './CreateNewContact'
-import api from "../services/api";
-import EditContact from './EditContact'
-import DeleteContact from './DeleteContact'
+import CreateNewContact from "./CreateNewContact";
+import EditContact from "./EditContact";
+import DeleteContact from "./DeleteContact";
 
-function Contacts() {
+import { closeEditContact } from "../actions/appActions";
+import api from "../services/api";
+
+function Contacts(props) {
+  const { closeEditContact } = props;
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
@@ -25,9 +30,26 @@ function Contacts() {
     };
   }, []);
 
+  const updateContact = (contactID, data) => {
+    api
+      .updateContact(contactID, data)
+      .then(res => {
+        let updatedContacts = [...contacts];
+        for (var i in contacts) {
+          if (contacts[i].id === contactID) {
+            updatedContacts[i] = { id:contactID,  ...data };
+            setContacts(updatedContacts);
+          }
+        }
+        console.log(res);
+      })
+      .catch(error => console.log(error));
+    closeEditContact();
+  };
+
   return (
     <div className="contacts-container">
-      <EditContact />
+      <EditContact updateContact={updateContact} />
       <DeleteContact />
       {/* Contacts main container  */}
       <div className="contacts-main">
@@ -78,4 +100,7 @@ function Contacts() {
   );
 }
 
-export default Contacts;
+const mapDispatchToProps = dispatch => ({
+  closeEditContact: () => dispatch(closeEditContact())
+});
+export default connect(null, mapDispatchToProps)(Contacts);
