@@ -8,6 +8,7 @@ import ContactsTable from "./ContactsTable";
 import CreateNewContact from './CreateNewContact'
 import api from "../services/api";
 import EditContact from './EditContact'
+import DeleteContact from './DeleteContact'
 
 function Contacts() {
   const [contacts, setContacts] = useState([]);
@@ -27,6 +28,7 @@ function Contacts() {
   return (
     <div className="contacts-container">
       <EditContact />
+      <DeleteContact />
       {/* Contacts main container  */}
       <div className="contacts-main">
         <div className="contacts-heading contacts-head-item">

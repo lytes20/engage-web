@@ -10,7 +10,7 @@ import {
 } from "./general";
 import { ExpandMore as ExpandMoreIcon } from "@material-ui/icons";
 import { ListItem } from "@material-ui/core";
-import { viewContact, openEditContact } from "../actions/appActions";
+import { openEditContact, openDeleteContact } from "../actions/appActions";
 
 const contactActions = [
   { id: 1, name: "Edit" },
@@ -21,7 +21,7 @@ const contactActions = [
 ];
 
 const ContactActionsDropDown = props => {
-  const { contact, openEditContact } = props;
+  const { contact, openEditContact, openDeleteContact } = props;
   const [displayList, setDisplayList] = useState(false);
   const handleEditContact = contact => {
     openEditContact(contact);
@@ -34,7 +34,7 @@ const ContactActionsDropDown = props => {
         handleEditContact(contact);
         return;
       case 5:
-        console.log("Delete was clicked");
+        openDeleteContact(contact);
       default:
         return;
     }
@@ -66,6 +66,7 @@ const ContactActionsDropDown = props => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  openEditContact: contact => dispatch(openEditContact(contact))
+  openEditContact: contact => dispatch(openEditContact(contact)),
+  openDeleteContact: contact => dispatch(openDeleteContact(contact))
 });
 export default connect(null, mapDispatchToProps)(ContactActionsDropDown);

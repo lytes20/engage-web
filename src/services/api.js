@@ -9,7 +9,7 @@ const api = {
     const response = await apiRequest.get("contacts");
     return response.data;
   },
-  createContact: async (data) => {
+  createContact: async data => {
     const response = await apiRequest.post("contacts", data);
     return response.data;
   },
@@ -17,6 +17,10 @@ const api = {
     const response = await apiRequest.patch(`contacts/${contactID}`, {
       ...data
     });
+    return response;
+  },
+  deleteContact: async contactID => {
+    const response = await apiRequest.delete(`contacts/${contactID}`);
     return response;
   }
 };
