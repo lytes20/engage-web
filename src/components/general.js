@@ -35,7 +35,7 @@ export const EllipsisButton = withStyles({
     cursor: "pointer",
     "&.MuiButton-root": {},
     "& .item-label": {
-      color: "#43506a",
+      color: "#43506a"
     }
   }
 })(Button);
@@ -53,10 +53,14 @@ export const DropDownList = withStyles(theme => ({
 export const ContactActionsDropDownList = withStyles(theme => ({
   root: {
     backgroundColor: "white",
-    borderRadius: props => (props.hasborderradius ? "4px" : "0"),
+    padding: "10px",
+    boxShadow:
+      "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
     zIndex: "10",
     position: "absolute",
-    width: "100%"
+    borderRadius: "4px",
+    right:"0",
+    width: "200%"
   }
 }))(List);
 
@@ -110,7 +114,6 @@ export const CustomTab = withStyles(theme => ({
     fontWeight: 500,
     minHeight: 40,
     textTransform: "capitalize",
-    "&.Mui-selected": {
-    }
+    "&.Mui-selected": {}
   }
 }))(props => <Tab disableRipple {...props} />);
