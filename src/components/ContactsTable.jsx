@@ -88,7 +88,7 @@ function ContactsTable(props) {
         />
         <TableBody>
           {contacts.map(contact => {
-            const contactName = `${contact.first_name} ${contact.first_name}`;
+            const contactName = `${contact.first_name} ${contact.last_name}`;
             const contactInitials = `${contact.first_name.charAt(
               0
             )}${contact.last_name.charAt(0)}`;

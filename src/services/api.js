@@ -13,9 +13,9 @@ const api = {
     const response = await apiRequest.post("contacts", data);
     return response.data;
   },
-  updatecontact: async (contactID, data) => {
+  updateContact: async (contactID, data) => {
     const response = await apiRequest.patch(`contacts/${contactID}`, {
-      name: data
+      ...data
     });
     return response;
   }
