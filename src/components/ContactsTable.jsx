@@ -46,7 +46,7 @@ function ContactsTable(props) {
   }
   const handleSelectAllClick = event => {
     if (event.target.checked) {
-      const newSelecteds = contacts.map(n => n.name);
+      const newSelecteds = contacts.map(n => n.id);
       setSelected(newSelecteds);
       return;
     }
@@ -72,7 +72,7 @@ function ContactsTable(props) {
     setSelected(newSelected);
   };
 
-  const isSelected = name => selected.indexOf(name) !== -1;
+  const isSelected = contactId => selected.indexOf(contactId) !== -1;
 
   return (
     <TableContainer component={Paper}>
@@ -90,7 +90,7 @@ function ContactsTable(props) {
             const contactInitials = `${contact.first_name.charAt(
               0
             )}${contact.last_name.charAt(0)}`;
-            const isItemSelected = isSelected(contactName);
+            const isItemSelected = isSelected(contact.id);
             return (
               <CustomTableRow
                 hover
@@ -100,7 +100,7 @@ function ContactsTable(props) {
               >
                 <CustomTableCell padding="checkbox">
                   <Checkbox
-                    onClick={event => handleClick(event, contact.name)}
+                    onClick={event => handleClick(event, contact.id)}
                     checked={isItemSelected}
                   />
                 </CustomTableCell>
